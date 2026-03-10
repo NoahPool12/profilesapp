@@ -10,6 +10,7 @@ const schema = a
       })
       .authorization((allow) => [
         allow.ownerDefinedIn("profileOwner"),
+        allow.publicApiKey().to(["read"]),
       ]),
   })
   .authorization((allow) => [allow.resource(postConfirmation)]);
